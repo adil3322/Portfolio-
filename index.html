@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -19,46 +19,6 @@
       background: linear-gradient(135deg, #ffffff, #e3f2fd, #f3e5f5);
       color: #222;
     }
-
-    /* NAVBAR */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      border-radius: 50px;
-      padding: 12px 30px;
-      z-index: 100;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-    nav a { 
-      text-decoration: none; 
-      color: inherit; 
-      font-weight: 600; 
-      transition: 0.3s; 
-      position: relative;
-    }
-    nav a.active { color: #ff6ec4; }
-    nav a.active::after {
-      content: "";
-      position: absolute;
-      bottom: -5px; left: 0;
-      width: 100%; height: 2px;
-      background: #ff6ec4;
-      border-radius: 2px;
-    }
-    nav button {
-      border: none; border-radius: 50%; padding: 8px 12px; cursor: pointer;
-      background: linear-gradient(90deg, #ff6ec4, #7873f5); color: white;
-      font-size: 0.9rem; font-weight: bold; transition: transform 0.3s;
-    }
-    nav button:hover { transform: scale(1.1); }
-
-    /* HEADER */
     header {
       height: 100vh;
       display: flex;
@@ -76,19 +36,36 @@
       animation: float 3s infinite ease-in-out;
     }
     header p { font-size: 1.5rem; margin-top: 10px; opacity: 0.8; }
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 50px;
+      padding: 10px 20px;
+      z-index: 10;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    nav a { text-decoration: none; color: inherit; font-weight: 600; transition: 0.3s; }
+    nav a:hover { color: #ff6ec4; }
+    nav button {
+      border: none; border-radius: 50%; padding: 8px 12px; cursor: pointer;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5); color: white;
+      font-size: 0.9rem; font-weight: bold; transition: transform 0.3s;
+    }
+    nav button:hover { transform: scale(1.1); }
     @keyframes float {
       0% { transform: translateY(0); }
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0); }
     }
-
-    /* SECTIONS */
-    section { padding: 100px 50px; text-align: center; }
+    section { padding: 80px 50px; text-align: center; }
     section h2 { font-size: 2.5rem; margin-bottom: 40px; color: #ff6ec4; }
-
     /* About */
     .about p { max-width: 700px; margin: auto; font-size: 1.2rem; line-height: 1.8; }
-
     /* Skills */
     .skills .bar { margin: 20px auto; max-width: 600px; text-align: left; }
     .bar span { display: block; margin-bottom: 10px; font-weight: 600; }
@@ -100,7 +77,6 @@
       height: 100%; background: linear-gradient(90deg, #ff6ec4, #7873f5);
       width: 0; transition: width 2s ease;
     }
-
     /* Projects */
     .projects {
       display: grid;
@@ -116,7 +92,6 @@
       cursor: pointer;
     }
     .card:hover { transform: rotateY(15deg) rotateX(10deg) scale(1.05); }
-
     /* Resume */
     .resume a {
       display: inline-block; padding: 12px 30px; border-radius: 30px;
@@ -124,7 +99,6 @@
       color: white; font-weight: 600; text-decoration: none; transition: 0.3s;
     }
     .resume a:hover { transform: scale(1.1); }
-
     /* Contact */
     .contact form {
       max-width: 500px; margin: auto;
@@ -140,20 +114,15 @@
       color: white; font-weight: 600; cursor: pointer; transition: 0.3s;
     }
     .contact button:hover { transform: scale(1.05); }
-
-    /* Footer */
     footer { text-align: center; padding: 20px; background: rgba(255, 255, 255, 0.05); }
     footer a { margin: 0 10px; color: inherit; text-decoration: none; font-size: 1.2rem; }
     footer a:hover { color: #ff6ec4; }
-
-    /* 3D Canvas */
-    canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+    canvas { position: absolute; top: 0; left: 0; z-index: -1; }
   </style>
 </head>
 <body>
   <canvas id="bg"></canvas>
   
-  <!-- NAVBAR -->
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -164,19 +133,16 @@
     <button id="bgSwitch">🖼️</button>
   </nav>
 
-  <!-- HEADER -->
-  <header id="home">
+  <header>
     <h1>Hello, I'm Adil Alam</h1>
     <p>Web Developer | Designer | Programmer</p>
   </header>
 
-  <!-- ABOUT -->
   <section id="about" class="about">
     <h2>About Me</h2>
     <p>I’m a passionate web developer skilled in HTML, CSS, JavaScript and Python basics. I enjoy creating visually stunning, interactive websites with modern design and smooth animations.</p>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills" class="skills">
     <h2>My Skills</h2>
     <div class="bar"><span>HTML</span><div class="progress"><div style="width:90%"></div></div></div>
@@ -185,7 +151,6 @@
     <div class="bar"><span>Python (Basics)</span><div class="progress"><div style="width:60%"></div></div></div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects" class="projects">
     <h2>Projects</h2>
     <div class="card">🚀 E-commerce Website</div>
@@ -194,13 +159,11 @@
     <div class="card">🎨 Portfolio Website</div>
   </section>
 
-  <!-- RESUME -->
   <section id="resume" class="resume">
     <h2>Resume</h2>
     <a href="resume.pdf" download>Download Resume</a>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="contact">
     <h2>Contact Me</h2>
     <form>
@@ -211,7 +174,6 @@
     </form>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 Adil Alam | Built with ❤️</p>
     <a href="#">LinkedIn</a>
@@ -219,32 +181,35 @@
     <a href="#">Twitter</a>
   </footer>
 
-  <!-- 3D & Animations -->
+  <!-- Three.js for 3D background -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
   <script>
-    // THREE.JS 3D Background
+    // Setup scene
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({canvas: document.getElementById('bg')});
     renderer.setSize(window.innerWidth, window.innerHeight);
 
+    // Geometry (3D rotating torus)
     const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
     const material = new THREE.MeshStandardMaterial({ color: 0xff6ec4, wireframe: true });
     const torus = new THREE.Mesh(geometry, material);
     scene.add(torus);
 
+    // Lights
     const light = new THREE.PointLight(0xffffff, 1);
     light.position.set(20,20,20);
     scene.add(light);
 
+    // Particle stars
     const starGeometry = new THREE.BufferGeometry();
     const starCount = 2000;
     const starPositions = [];
     for (let i = 0; i < starCount; i++) {
-      starPositions.push((Math.random() - 0.5) * 2000,
-                         (Math.random() - 0.5) * 2000,
-                         (Math.random() - 0.5) * 2000);
+      const x = (Math.random() - 0.5) * 2000;
+      const y = (Math.random() - 0.5) * 2000;
+      const z = (Math.random() - 0.5) * 2000;
+      starPositions.push(x, y, z);
     }
     starGeometry.setAttribute("position", new THREE.Float32BufferAttribute(starPositions, 3));
     const starMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 1 });
@@ -252,6 +217,7 @@
     scene.add(stars);
 
     camera.position.z = 50;
+
     function animate() {
       requestAnimationFrame(animate);
       torus.rotation.x += 0.01;
@@ -267,7 +233,7 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-    // Scroll-triggered skills animation
+    // Animate skills progress on scroll
     const progressBars = document.querySelectorAll(".progress div");
     window.addEventListener("scroll", () => {
       if (window.scrollY > document.getElementById("skills").offsetTop - 200) {
@@ -277,7 +243,7 @@
       }
     });
 
-    // Theme toggle
+    // Dark mode toggle
     const themeToggle = document.getElementById("themeToggle");
     themeToggle.addEventListener("click", () => {
       document.body.classList.toggle("light");
@@ -296,36 +262,6 @@
     bgSwitch.addEventListener("click", () => {
       bgIndex = (bgIndex + 1) % backgrounds.length;
       document.body.style.background = backgrounds[bgIndex];
-    });
-
-    // ScrollReveal animations
-    ScrollReveal().reveal('header h1', { delay: 200, duration: 1500, origin: 'top', distance: '50px' });
-    ScrollReveal().reveal('header p', { delay: 400, duration: 1500, origin: 'bottom', distance: '50px' });
-    ScrollReveal().reveal('.about', { delay: 300, duration: 1500, origin: 'left', distance: '50px' });
-    ScrollReveal().reveal('.skills', { delay: 300, duration: 1500, origin: 'right', distance: '50px' });
-    ScrollReveal().reveal('.projects .card', { interval: 200, duration: 1500, origin: 'bottom', distance: '50px' });
-    ScrollReveal().reveal('.resume', { delay: 200, duration: 1500, origin: 'left', distance: '50px' });
-    ScrollReveal().reveal('.contact', { delay: 200, duration: 1500, origin: 'right', distance: '50px' });
-
-    // Active nav highlighting
-    const sections = document.querySelectorAll("section, header");
-    const navLinks = document.querySelectorAll("nav a");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
     });
   </script>
 </body>
